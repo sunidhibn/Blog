@@ -1,0 +1,17 @@
+{% extends  'base.html'%}
+{% block content%}
+{%if posts %}
+	<div class="col-md-6">
+			
+			{% for p in posts %}
+			<blockquote>
+			<h3>{{p.title}}</h3>
+	  		<p>{{ p.content }}</p>
+	  		<small> <b>{{p.username}}</b>, <cite title="Source Title">{{p.posttime}}</cite></small>
+			</blockquote>
+			{% endfor %}
+	</div>
+{% else %}
+	<h3>Sorry, No posts found</h3>
+{% endif %}
+{% endblock %}

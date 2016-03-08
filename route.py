@@ -28,4 +28,19 @@ def delete(post_id):
 	data.execute()
 	return redirect('/')
 
+@app.route('/edit/<int:post_id>',methods=['GET','POST'])
+def edit(post_id):
+	if request.method=='POST':
+		content=request.form['content']
+		title= request.form['title']
+		print content,title
+		data=blogs.update(content=content,title=title).where(blogs.id==post_id)
+		data.execute()
+		return redirect('/')
+	else:
+		data=blogs.select().where(blogs.id==post_id)
+		return render_template("edit.html",posts=data)
+
+
+
 app.run(debug=True)

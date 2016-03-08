@@ -9,7 +9,8 @@
 		<h3>{{p.title}}</h3>
   		<p>{{ p.content }}</p>
   		<small> <b><a href="{{p.username}}">{{p.username}}</a></b>, <cite title="Source Title">{{p.posttime}}</cite> 
-  		<a href="delete/{{p.id}}" ><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></small>
+  		<a href="delete/{{p.id}}" ><span class="glyphicon glyphicon-trash" aria-hidden="true">Delete   </span></a>
+  		 <a href="edit/{{p.id}}"> <span class="glyphicon glyphicon-pencil" aria-hidden="true">Edit</span></a></small>
 		</blockquote>
 		{% endfor %}
 	{%else%}
